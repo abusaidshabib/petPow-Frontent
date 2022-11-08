@@ -1,0 +1,44 @@
+[
+    {
+        "image": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1586&q=80",
+        "index": 1,
+        "title": "Buy Best Pet",
+        "details": "So you’re thinking of adding a pet to your family? Congrats! Animals make our days more fun, our lives more rich and our sofas more snuggly. But it’s important to not bring home the first furry (or feathered or scaly) friend who catches your eye. Different pets require different levels of care and commitment, and not every lifestyle is compatible with every animal. So what’s the best choice for you? Take our What Pet Should I Get quiz to determine your perfect companion."
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1583336663277-620dc1996580?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+        "index": 2,
+        "title": "Pet Clothes",
+        "details": "Pets are always in contact with family members, so keeping them clean keeps your family safe. Therefore, getting clothes for dogs and visiting grooming salons regularly can help them stay clean. For instance, your dog may be okay without clothes while indoors, but while outside, you may need some coat for them."
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1518640165980-d3e0e2aa6c1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+        "index": 3,
+        "title": "Custom house for pets",
+        "details": "They provide enough room for the dog to fully stand up, move around and even have access to dog food and water. They are elevated above the ground to provide ventilation during hot weather and to avoid the floor from getting too cold during winter. Speaking of ventilation, a good dog house has a good ventilation."
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1577349516274-37ff88a53627?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+        "index": 4,
+        "title": "Quality pet foods",
+        "details": "The vitamins and minerals found in every bag of dog food work together to keep your dog’s immune system and metabolism functioning normally. Vitamins work to reduce the damage done to body cells on a daily basis. Minerals promote the normal function of the cells that maintain health. Vitamins and minerals come from both plant and animal sources in the diet. Without adequate levels of vitamins and minerals, your pet would eventually become ill."
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1469982866068-278880140412?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "index": 5,
+        "title": "Best Medicine",
+        "details": "If you’ve never owned a pet before, you’ll need to familiarise yourself with all the necessary procedures required to keep it fit and healthy. This includes vaccinations, worming and flea treatments, gum and dental care, as well as more ‘cosmetic’ treatments, such as bathing, grooming and nail-clipping.You’ll also need to decide whether to get your pet ‘neutered’ to prevent it from reproducing. For a male animal, the operation is called ‘castration’ and for a female it’s called ‘spaying.’As a responsible pet owner, you must get your animal registered with a local veterinary practice where you can take it for all its routine healthcare and treatment."
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1549297161-14f79605a74c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
+        "index": 6,
+        "title": "Toys for pets",
+        "details": "It tuckers them out – Playing with toys is the equivalent of us doing a crossword or Sudoku puzzle. The mental stimulation provided by toys will tire your dog our quicker than a 30min walk, leaving them with less energy to get themselves into trouble!They build independence – Being pack animals, dogs are not built to spend extended periods of time alone. But with work and general life commitments, it’s not always possible to be with them all the time. Toys keep your pooch entertained while you’re not there, so they learn that they can have fun while you’re not there. They’ll also be more likely to give you your space when you’re trying to get things done at home.It’s fun! – Simply put, dogs just LOVE toys! They’re fun and a new toy can make their lives extra exciting!"
+    },
+    {
+        "image": "https://images.unsplash.com/photo-1577175889968-f551f5944abd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "index": 7,
+        "title": "Serve doctors",
+        "details": "Your pet’s body is composed of a complex network of systems that work together to keep it functioning properly. Often, a problem develops in one area, and affects other body functions, and the ensuing complex signs can be challenging to interpret. And, while some conditions can be cured, chronic diseases often require life-long management to maintain a good quality of life for pets. For these reasons, internal medicine is one of the broadest, most comprehensive veterinary medicine specialties. When baseline diagnostic testing fails to diagnose a sick pet, traditional treatments fail to adequately manage disease, or a condition simply does not respond to therapy, a veterinary internist can help get to the root of the problem."
+    }
+]
