@@ -1,33 +1,42 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import "./ServiceSection.css";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 
-const ServiceSection = () => {
+const ServiceSection = ({ services }) => {
     return (
-        <Container className='py-5'>
-            <p className='display-4 fw-bold text-center'>Services</p>
-            <Row>
-                <Col className='text-center col-lg-4'>
-                <Card style={{ width: '30%vw' }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Link><Button variant="primary">Add Now</Button></Link>
-                    </Card.Body>
-                </Card>
-                </Col>
-            </Row>
-        </Container>
+        <PhotoProvider>
+            <Container className='py-5'>
+                <p className='display-4 fw-bold text-center py-5'>Services</p>
+                <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
+                    {
+                        services.map(service => <Col className='text-center col pb-4' key={service.index}>
+                            <Card style={{ width: '30%vw' }}>
+                                <PhotoView src={service.image}>
+                                    <img className='card-img-top img-fluid image-resize' src={service.image} alt=""/>
+                                </PhotoView>
+                                <Card.Body>
+                                    <Card.Title><h3>{service.title}</h3></Card.Title>
+                                    <Card.Text>
+                                        {service.details.slice(0,100)}... <Link>Read More</Link>
+                                    </Card.Text>
+                                    <Link><Button variant="primary">Add Now</Button></Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>)
+                    }
+                </div>
+            </Container>
+        </PhotoProvider>
     );
 };
 
 export default ServiceSection;
+
+{/* <Card.Img variant="top" className='img-fluid image-resize' src={service.image} /> */}

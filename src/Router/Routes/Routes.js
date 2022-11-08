@@ -9,6 +9,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
+                loader: () => fetch('service.json'),
                 element: <Home></Home>
             }
         ]
