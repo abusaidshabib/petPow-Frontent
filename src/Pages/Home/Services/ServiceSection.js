@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 const ServiceSection = () => {
     return (
         <Container className='py-5'>
+            <p className='display-4 fw-bold text-center'>Services</p>
             <Row>
                 <Col className='text-center col-lg-4'>
                 <Card style={{ width: '30%vw' }}>

@@ -11,7 +11,7 @@ const Header = () => {
             <Container>
                 <Navbar.Brand>
 
-                    <Link className='text-decoration-none text-white fs-3 text' to='/'><b>PETpow</b></Link>
+                    <Link className='text-decoration-none text-white fs-3 text' to='/'><b>PET<span className='red'>POW</span></b></Link>
 
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

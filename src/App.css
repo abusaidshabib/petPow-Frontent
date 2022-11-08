@@ -19,3 +19,7 @@
 .background{
   background-color: #FFFAF5;
 }
+
+html{
+  scroll-behavior: smooth;
+}
