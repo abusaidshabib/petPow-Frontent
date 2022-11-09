@@ -11,7 +11,7 @@ const GooglePopup = () => {
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
+    let from = location.state?.from?.pathname || '/';
 
     const handleGPopUp = () => {
         googlePopUp(googleProvider)

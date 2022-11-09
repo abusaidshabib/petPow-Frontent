@@ -1,23 +1,26 @@
 import React, { useContext } from 'react';
-import { Carousel, Container, Image } from 'react-bootstrap';
+import { CardImg, Carousel, Container, Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaUserAlt } from 'react-icons/fa';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext/UserContext';
+import './SIngleServices.css'
 
 const SingleServices = () => {
     const { user } = useContext(AuthContext);
+    const {title, details,image, index} = useLoaderData();
 
     return (
         <Container>
             <Card>
-                <Card.Header as="h5">Featured</Card.Header>
+                <Card.Header as="h5">Service Number: {index}</Card.Header>
                 <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
-                    <Card.Text>
-                        With supporting text below as a natural lead-in to additional content.
+                    <CardImg className='card-img' src={image}></CardImg>
+                    <Card.Title className='display-2 fw-bold'>{title}</Card.Title>
+                    <Card.Text className='fs-4 fw-normal'>
+                        {details}
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
             </Card>
             <Carousel className='mb-5'>
@@ -39,7 +42,7 @@ const SingleServices = () => {
                                     <p>Reviews</p>
                                     </>
                                     :
-                                    <>Review Not Available</>
+                                    <p>Review Not Available</p>
                             }
                         </div>
                     </div>

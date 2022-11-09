@@ -23,8 +23,11 @@ const ServiceSection = ({ services }) => {
                                 </PhotoView>
                                 <Card.Body>
                                     <Card.Title><h3>{service.title}</h3></Card.Title>
-                                    <Card.Text className='text-end'>
-                                        {service.details.slice(0, 100)}... <Link to="/service">More Details</Link>
+                                    <Card.Text>
+                                        {service.details.slice(0, 80)}...
+                                        <div className='text-end'>
+                                            <Link to={`/service/${service._id}`}>More Details</Link>
+                                        </div>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

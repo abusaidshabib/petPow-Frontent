@@ -50,7 +50,7 @@ const Register = () => {
                                 <Form.Control name='password' type="password" placeholder="Your Password" required />
                             </Form.Group>
                             <div className='text-end'>
-                                <Button className='lead pb-lg-2 fw-bold' variant="primary" type="submit">
+                                <Button className='lead pb-lg-2 fw-bold w-100' variant="primary" type="submit">
                                     Submit
                                 </Button>
                             </div>

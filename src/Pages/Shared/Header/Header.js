@@ -22,6 +22,13 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Link to="/services" className='nav-link text-warning'>SERVICES</Link>
                         <Link to="/blog" className='nav-link text-warning'>BLOG</Link>
+                        {
+                            user?.uid ?
+                            <Link to={`/myreviews/${user.displayName}`} className='nav-link text-warning'>MY REVIEWS</Link>
+                            :
+                            <></>
+
+                        }
                     </Nav>
                     <Nav>
                         {
@@ -29,6 +36,9 @@ const Header = () => {
                                 <>
                                     <Link className='nav-link mt-2'>
                                         <Button onClick={logOut} variant='primary'>LogOut</Button>
+                                    </Link>
+                                    <Link to="/addservice" className='nav-link mt-2'>
+                                        <Button variant='primary'>Add Service</Button>
                                     </Link>
                                 </>
                                 :

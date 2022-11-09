@@ -7,6 +7,8 @@ import Register from "../../Pages/Register/Register";
 import AllServices from "../../Pages/Services/AllServices";
 import SingleServices from "../../Pages/SingleService/SingleServices";
 import Unavailable from "../../Pages/Unavailable/Unavailable";
+import MyReviews from "../../Pages/MyReviews/MyReviews";
+import AddService from "../../Pages/AddService/AddService";
 
 const router = createBrowserRouter([
     {
@@ -32,7 +34,8 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/service',
+                path: '/service/:id',
+                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
                 element: <SingleServices></SingleServices>
             },
             {
@@ -42,6 +45,14 @@ const router = createBrowserRouter([
             {
                 path: '*',
                 element: <Unavailable></Unavailable>
+            },
+            {
+                path: '/myreviews/:id',
+                element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/addservice',
+                element: <AddService></AddService>
             }
         ]
     }
