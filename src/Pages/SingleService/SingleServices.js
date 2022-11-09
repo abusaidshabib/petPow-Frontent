@@ -7,7 +7,6 @@ import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const SingleServices = () => {
     const { user } = useContext(AuthContext);
-    console.log(user);
 
     return (
         <Container>

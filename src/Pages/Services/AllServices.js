@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Col, Container } from 'react-bootstrap';
+import { Card, Col, Container } from 'react-bootstrap';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
@@ -19,10 +19,9 @@ const AllServices = () => {
                                 </PhotoView>
                                 <Card.Body>
                                     <Card.Title><h3>{service.title}</h3></Card.Title>
-                                    <Card.Text>
+                                    <Card.Text className='text-end'>
                                         {service.details.slice(0, 100)}... <Link to="/service">More Details</Link>
                                     </Card.Text>
-                                    <Link><Button variant="primary">Add Now</Button></Link>
                                 </Card.Body>
                             </Card>
                         </Col>)

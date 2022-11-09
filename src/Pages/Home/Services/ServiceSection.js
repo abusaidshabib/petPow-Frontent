@@ -23,10 +23,9 @@ const ServiceSection = ({ services }) => {
                                 </PhotoView>
                                 <Card.Body>
                                     <Card.Title><h3>{service.title}</h3></Card.Title>
-                                    <Card.Text>
+                                    <Card.Text className='text-end'>
                                         {service.details.slice(0, 100)}... <Link to="/service">More Details</Link>
                                     </Card.Text>
-                                    <Link><Button variant="primary">Add Now</Button></Link>
                                 </Card.Body>
                             </Card>
                         </Col>))
@@ -44,5 +43,3 @@ const ServiceSection = ({ services }) => {
 };
 
 export default ServiceSection;
-
-{/* <Card.Img variant="top" className='img-fluid image-resize' src={service.image} /> */ }
