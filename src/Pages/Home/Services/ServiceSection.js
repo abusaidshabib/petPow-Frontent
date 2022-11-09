@@ -16,27 +16,33 @@ const ServiceSection = ({ services }) => {
                 <p className='display-4 fw-bold text-center py-5'>Services</p>
                 <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
                     {
-                        services.map(service => <Col className='text-center col pb-4' key={service.index}>
+                        services.map((service, dex) => dex < 3 && (<Col className='text-center col pb-4' key={service.index}>
                             <Card style={{ width: '30%vw' }}>
                                 <PhotoView src={service.image}>
-                                    <img className='card-img-top img-fluid image-resize' src={service.image} alt=""/>
+                                    <img className='card-img-top img-fluid image-resize' src={service.image} alt="" />
                                 </PhotoView>
                                 <Card.Body>
                                     <Card.Title><h3>{service.title}</h3></Card.Title>
                                     <Card.Text>
-                                        {service.details.slice(0,100)}... <Link>Read More</Link>
+                                        {service.details.slice(0, 100)}... <Link to="/service">More Details</Link>
                                     </Card.Text>
                                     <Link><Button variant="primary">Add Now</Button></Link>
                                 </Card.Body>
                             </Card>
-                        </Col>)
+                        </Col>))
                     }
                 </div>
+                <div className='text-end'>
+                    <Link to="/services">
+                        <Button>Click for more services</Button>
+                    </Link>
+                </div>
             </Container>
+
         </PhotoProvider>
     );
 };
 
 export default ServiceSection;
 
-{/* <Card.Img variant="top" className='img-fluid image-resize' src={service.image} /> */}
+{/* <Card.Img variant="top" className='img-fluid image-resize' src={service.image} /> */ }

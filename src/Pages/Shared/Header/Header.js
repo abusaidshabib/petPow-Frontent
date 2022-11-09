@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/UserContext/UserContext';
 
 const Header = () => {
+    const {logOut, user} = useContext(AuthContext);
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
@@ -21,12 +24,23 @@ const Header = () => {
                         <Link to="/blog" className='nav-link text-warning'>BLOG</Link>
                     </Nav>
                     <Nav>
-                        <Link className='nav-link' to='/login'>
-                            <button type="button" className="btn btn-warning text-dark btn-lg px-4 me-md-2 fw-bold">Login</button>
-                        </Link>
-                        <Link className='nav-link' to='/register'>
-                            <Button className="btn btn-dark text-white btn-lg px-4 me-md-2 fw-bold border none">REGISTER</Button>
-                        </Link>
+                        {
+                            user?.uid ?
+                                <>
+                                    <Link className='nav-link mt-2'>
+                                        <Button onClick={logOut} variant='primary'>LogOut</Button>
+                                    </Link>
+                                </>
+                                :
+                                <>
+                                    <Link className='nav-link' to='/login'>
+                                        <button type="button" className="btn btn-warning text-dark btn-lg px-4 me-md-2 fw-bold">Login</button>
+                                    </Link>
+                                    <Link className='nav-link' to='/register'>
+                                        <Button className="btn btn-dark text-white btn-lg px-4 me-md-2 fw-bold border none">REGISTER</Button>
+                                    </Link>
+                                </>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>
