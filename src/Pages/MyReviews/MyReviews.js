@@ -1,11 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Image } from 'react-bootstrap';
 import { FaUserAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
+    const [reviews, setReviews] = useState({});
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [user?.email])
+
 
     return (
         <div className='py-lg-5 py-md-4'>
@@ -34,17 +41,10 @@ const MyReviews = () => {
                         }
 
                     </div>
-                    <div className="col-12 col-md-8">
-                        <h1 className='fw-bold display-6'>Reviews</h1>
-                        <br/>
-                        <div className="card border-0 bg-transparent">
-                            <div className="card-body">
-                                <h5 className="card-title">Service Title</h5>
-                                <h6 className="card-subtitle mb-2 text-muted">Card Number</h6>
-                                <p className="card-text">Customer review</p>
-                                <Link className='card-link'>Delete</Link>
-                            </div>
-                        </div>
+                    <div>
+                        {/* {
+                            reviews.map(review => <div key={review._id}>demo</div>)
+                        } */}
                     </div>
                 </div>
             </Container>

@@ -12,7 +12,7 @@ const AllServices = () => {
                 <p className='display-4 fw-bold text-center py-5'>Services</p>
                 <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
                     {
-                        services.map(service => <Col className='text-center col pb-4' key={service.index}>
+                        services.map(service => <Col className='text-center col pb-4' key={service._id}>
                             <Card style={{ width: '30%vw' }}>
                                 <PhotoView src={service.image}>
                                     <img className='card-img-top img-fluid image-resize' src={service.image} alt="" />

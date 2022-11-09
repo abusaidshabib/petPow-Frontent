@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
-    
+
     const [size, setSize] = useState(null);
 
     useEffect(() => {
@@ -20,7 +22,7 @@ const AddService = () => {
         const url = form.url.value;
         const details = form.details.value;
         const price = form.price.value;
-        const index = `${size+1}`;
+        const index = `${size + 1}`;
 
 
         const oneservice = {
@@ -34,13 +36,18 @@ const AddService = () => {
         fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(oneservice)
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast("Service Added Successfully");
+                    form.reset();   
+                }
+                })
+            .catch(error => console.error(error));
     }
 
     return (
@@ -50,12 +57,12 @@ const AddService = () => {
                 <Form onSubmit={handleSubmitService}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Service Title</Form.Label>
-                        <Form.Control name='title' type="text" placeholder="Service Title" required/>
+                        <Form.Control name='title' type="text" placeholder="Service Title" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Service Image URL</Form.Label>
-                        <Form.Control name='url' type="url" placeholder="Service Image URL" required/>
+                        <Form.Control name='url' type="url" placeholder="Service Image URL" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -65,7 +72,7 @@ const AddService = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Set Price of Service</Form.Label>
-                        <Form.Control name='price' type="number" placeholder="Service Price" required/>
+                        <Form.Control name='price' type="number" placeholder="Service Price" required />
                     </Form.Group>
 
                     <Button className='w-100' variant="primary" type="submit">
@@ -73,6 +80,7 @@ const AddService = () => {
                     </Button>
                 </Form>
             </Container>
+            <ToastContainer />
         </div>
     );
 };

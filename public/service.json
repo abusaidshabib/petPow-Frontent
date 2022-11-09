@@ -46,13 +46,14 @@
         "details": "It tuckers them out – Playing with toys is the equivalent of us doing a crossword or Sudoku puzzle. The mental stimulation provided by toys will tire your dog our quicker than a 30min walk, leaving them with less energy to get themselves into trouble!They build independence – Being pack animals, dogs are not built to spend extended periods of time alone. But with work and general life commitments, it’s not always possible to be with them all the time. Toys keep your pooch entertained while you’re not there, so they learn that they can have fun while you’re not there. They’ll also be more likely to give you your space when you’re trying to get things done at home.It’s fun! – Simply put, dogs just LOVE toys! They’re fun and a new toy can make their lives extra exciting!",
         "price": 466,
         "rating": 0
-    },
-    {
-        "image": "https://images.unsplash.com/photo-1577175889968-f551f5944abd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-        "index": 7,
-        "title": "Serve doctors",
-        "details": "Your pet’s body is composed of a complex network of systems that work together to keep it functioning properly. Often, a problem develops in one area, and affects other body functions, and the ensuing complex signs can be challenging to interpret. And, while some conditions can be cured, chronic diseases often require life-long management to maintain a good quality of life for pets. For these reasons, internal medicine is one of the broadest, most comprehensive veterinary medicine specialties. When baseline diagnostic testing fails to diagnose a sick pet, traditional treatments fail to adequately manage disease, or a condition simply does not respond to therapy, a veterinary internist can help get to the root of the problem.",
-        "price": 268,
-        "rating": 0
     }
 ]
+
+{
+    "image": "https://images.unsplash.com/photo-1577175889968-f551f5944abd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "index": 7,
+    "title": "Serve doctors",
+    "details": "Your pet’s body is composed of a complex network of systems that work together to keep it functioning properly. Often, a problem develops in one area, and affects other body functions, and the ensuing complex signs can be challenging to interpret. And, while some conditions can be cured, chronic diseases often require life-long management to maintain a good quality of life for pets. For these reasons, internal medicine is one of the broadest, most comprehensive veterinary medicine specialties. When baseline diagnostic testing fails to diagnose a sick pet, traditional treatments fail to adequately manage disease, or a condition simply does not respond to therapy, a veterinary internist can help get to the root of the problem.",
+    "price": 268,
+    "rating": 0
+}
