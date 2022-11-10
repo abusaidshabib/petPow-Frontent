@@ -9,6 +9,7 @@ import SingleServices from "../../Pages/SingleService/SingleServices";
 import Unavailable from "../../Pages/Unavailable/Unavailable";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import AddService from "../../Pages/AddService/AddService";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
                 element: <AllServices></AllServices>
             },
             {
-                path: 'login',
+                path: '/login',
                 element: <Login></Login>
             },
             {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/service/:id',
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
                 element: <SingleServices></SingleServices>
             },
             {
@@ -47,12 +48,16 @@ const router = createBrowserRouter([
                 element: <Unavailable></Unavailable>
             },
             {
-                path: '/myreviews/:id',
-                element: <MyReviews></MyReviews>
+                path: '/myreviews',
+                element: <PrivateRouter>
+                    <MyReviews></MyReviews>
+                </PrivateRouter>
             },
             {
                 path: '/addservice',
-                element: <AddService></AddService>
+                element: <PrivateRouter>
+                    <AddService></AddService>
+                </PrivateRouter>
             }
         ]
     }

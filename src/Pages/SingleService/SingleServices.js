@@ -1,16 +1,23 @@
-import React, { useContext } from 'react';
-import { Button, CardImg, Carousel, Container, Form, Image } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
-import { FaUserAlt } from 'react-icons/fa';
+import React, { useContext, useEffect, useState } from 'react';
+import { Button, Card, CardImg, Carousel, Container, Form } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext/UserContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './SIngleServices.css';
+import { FaUserAlt } from 'react-icons/fa';
 
 const SingleServices = () => {
     const { user } = useContext(AuthContext);
-    const { title, details, image, index, _id } = useLoaderData();
+    const [review, setReview] = useState([]);
+    const { title, details, image, index, _id, } = useLoaderData();
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews/${_id}`)
+            .then(res => res.json())
+            .then(data => setReview(data))
+    }, [_id])
 
     const handleSubmitReview = event => {
         event.preventDefault();
@@ -19,9 +26,11 @@ const SingleServices = () => {
 
         const sendreview = {
             auth_img: user.photoURL,
-            uid: _id,
+            sid: _id,
             email: user.email,
-            review: review
+            name: user.displayName,
+            review: review,
+            title
         }
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
@@ -53,30 +62,33 @@ const SingleServices = () => {
                     </Card.Text>
                 </Card.Body>
             </Card>
-            <Carousel className='mb-5'>
-                <Carousel.Item>
-                    <div className="row align-items-center bg-warning py-5">
-                        <div className="col text-center">
-                            {
-                                user?.uid ?
-                                    <Image className='border border-5' roundedCircle src={user.photoURL}></Image>
+            <Carousel className='mb-5 bg-dark text-white'>
+                {
+                    review.map(sreview => (<Carousel.Item key={sreview._id}>
+                        <div className='row m-md-5 align-items-center'>
+                            <div className='col-md-4 text-end'>
+                                {
+                                    sreview?.auth_img?
+                                    <img className='rounded-circle' src={sreview.auth_img} alt=" " />
                                     :
-                                    <FaUserAlt></FaUserAlt>
-                            }
+                                    <FaUserAlt/>
+                                }
+                            </div>
+                            <div className='col'>
+                                <Card className='border-0'>
+                                    <Card.Body className='bg-dark text-white'>
+                                        <Card.Title>{sreview.name}</Card.Title>
+                                        <Card.Text>
+                                            {
+                                                sreview.review
+                                            }
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
                         </div>
-                        <div className="col">
-                            {
-                                user?.uid ?
-                                    <>
-                                        <p>{user.displayName}</p>
-                                        <p>Reviews</p>
-                                    </>
-                                    :
-                                    <p>Review Not Available</p>
-                            }
-                        </div>
-                    </div>
-                </Carousel.Item>
+                    </Carousel.Item>))
+                }
             </Carousel>
 
 

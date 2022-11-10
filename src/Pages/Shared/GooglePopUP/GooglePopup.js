@@ -7,17 +7,16 @@ import { AuthContext } from '../../../Context/UserContext/UserContext';
 const GooglePopup = () => {
 
     const { googlePopUp,user } = useContext(AuthContext);
-
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/'
 
     const handleGPopUp = () => {
         googlePopUp(googleProvider)
         .then(result => {
             result = result.user;
-            navigate(from, {replace: true});
+            navigate(from, { replace: true });
         })
         .catch(error => console.error(error));
     }

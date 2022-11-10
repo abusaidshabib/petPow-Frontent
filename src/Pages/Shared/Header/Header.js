@@ -24,7 +24,7 @@ const Header = () => {
                         <Link to="/blog" className='nav-link text-warning'>BLOG</Link>
                         {
                             user?.uid ?
-                            <Link to={`/myreviews/${user.displayName}`} className='nav-link text-warning'>MY REVIEWS</Link>
+                            <Link to={`/myreviews`} className='nav-link text-warning'>MY REVIEWS</Link>
                             :
                             <></>
 
