@@ -17,7 +17,7 @@ const SingleServices = () => {
 
     // load review from data
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://service-provider-server-seven.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => setReview(data))
     }, [_id])
@@ -35,7 +35,7 @@ const SingleServices = () => {
             review: review,
             title
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://service-provider-server-seven.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

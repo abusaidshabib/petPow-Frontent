@@ -11,7 +11,7 @@ const AddService = () => {
     const [size, setSize] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://service-provider-server-seven.vercel.app/services")
             .then(res => res.json())
             .then(data => setSize(data.length))
     }, [])
@@ -35,7 +35,7 @@ const AddService = () => {
         }
 
         // send data to server
-        fetch('http://localhost:5000/services', {
+        fetch('https://service-provider-server-seven.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
