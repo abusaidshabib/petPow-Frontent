@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
+import Modal from 'react-bootstrap/Modal';
 
-const Reviews = ({ sreview, handleDelete }) => {
+
+const Reviews = ({ sreview, handleDelete}) => {
     const { title, review, _id } = sreview;
     return (
         <div>
@@ -13,6 +15,7 @@ const Reviews = ({ sreview, handleDelete }) => {
                     </div>
                     <Row className='py-md-3'>
                         <Col>
+                            <Button varient='primary'>Edit</Button>
                         </Col>
                         <Col>
                             <Button onClick={() => handleDelete(_id)} variant='primary'> Delete</Button>

@@ -65,34 +65,41 @@ const SingleServices = () => {
                     </Card.Text>
                 </Card.Body>
             </Card>
-            <Carousel className='mb-5 bg-dark text-white'>
-                {
-                    review.map(sreview => (<Carousel.Item key={sreview._id}>
-                        <div className='row m-md-5 align-items-center'>
-                            <div className='col-md-4 text-end'>
-                                {
-                                    sreview?.auth_img?
-                                    <img className='rounded-circle' src={sreview.auth_img} alt=" " />
-                                    :
-                                    <FaUserAlt/>
-                                }
-                            </div>
-                            <div className='col'>
-                                <Card className='border-0'>
-                                    <Card.Body className='bg-dark text-white'>
-                                        <Card.Title>{sreview.name}</Card.Title>
-                                        <Card.Text>
-                                            {
-                                                sreview.review
-                                            }
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </div>
-                        </div>
-                    </Carousel.Item>))
-                }
-            </Carousel>
+            {
+                review.length > 0 ?
+                    <Carousel className='mb-5 bg-dark text-white'>
+                        {
+                            review.map(sreview => (<Carousel.Item key={sreview._id}>
+                                <div className='row m-md-5 align-items-center'>
+                                    <div className='col-md-4 text-end'>
+                                        {
+                                            sreview?.auth_img ?
+                                                <img className='rounded-circle' src={sreview.auth_img} alt=" " />
+                                                :
+                                                <FaUserAlt />
+                                        }
+                                    </div>
+                                    <div className='col'>
+                                        <Card className='border-0'>
+                                            <Card.Body className='bg-dark text-white'>
+                                                <Card.Title>{sreview.name}</Card.Title>
+                                                <Card.Text>
+                                                    {
+                                                        sreview.review
+                                                    }
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </div>
+                                </div>
+                            </Carousel.Item>))
+                        }
+                    </Carousel>
+                    :
+                    <div className='col-12 col-md-8 text-center'>
+                        <p className='display-6 fw-bold'>No reviews were added</p>
+                    </div>
+            }
 
 
             {
