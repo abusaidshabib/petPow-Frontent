@@ -5,8 +5,10 @@ import Card from 'react-bootstrap/Card';
 import Reviews from './Reviews';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
+import useTitle from '../../hook/useTitle';
 
 const MyReviews = () => {
+    useTitle('myreviews')
     const { user } = useContext(AuthContext);
     const [review, setReview] = useState([]);
 

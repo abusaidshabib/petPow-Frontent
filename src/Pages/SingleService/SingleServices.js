@@ -6,8 +6,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './SIngleServices.css';
 import { FaUserAlt } from 'react-icons/fa';
+import useTitle from '../../hook/useTitle';
 
 const SingleServices = () => {
+    useTitle('singleservice')
     const { user } = useContext(AuthContext);
     const [review, setReview] = useState([]);
     const { title, details, image, index, _id, } = useLoaderData();

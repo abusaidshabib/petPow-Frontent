@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext/UserContext';
+import useTitle from '../../hook/useTitle';
 import GooglePopup from '../Shared/GooglePopUP/GooglePopup';
 
 const Login = () => {
+    useTitle('login')
     const { signInEmPass } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();

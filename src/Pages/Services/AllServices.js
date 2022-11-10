@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Col, Container } from 'react-bootstrap';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
 
 const AllServices = () => {
+    useState('services')
     const services = useLoaderData();
     return (
         <PhotoProvider>
@@ -22,7 +23,7 @@ const AllServices = () => {
                                     <Card.Text>
                                         {service.details.slice(0, 80)}...
                                         <span className='text-end'>
-                                            <Link to={`/service/${service._id}`}>More Details</Link>
+                                            <Link to={`/services/${service._id}`}>More Details</Link>
                                         </span>
                                     </Card.Text>
                                 </Card.Body>
