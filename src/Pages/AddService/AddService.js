@@ -6,7 +6,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
-
     const [size, setSize] = useState(null);
 
     useEffect(() => {

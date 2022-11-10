@@ -5,7 +5,6 @@ import { AuthContext } from '../../Context/UserContext/UserContext';
 import GooglePopup from '../Shared/GooglePopUP/GooglePopup';
 
 const Login = () => {
-
     const { signInEmPass } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
