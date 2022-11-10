@@ -33,6 +33,7 @@ const MyReviews = () => {
         }
     }
 
+
     const handleUpdate = id => {
         fetch(`http://localhost:5000/orders/${id}`, {
             method: 'PATCH',
@@ -42,46 +43,53 @@ const MyReviews = () => {
             body: JSON.stringify({ status: 'Approved' }),
         })
     }
-        return (
-            <div className='row p-md-5'>
-                <div className='col-12 col-md-4'>
-                    <Card className="text-center">
-                        <Card.Header>Author</Card.Header>
-                        <span className='pt-md-3'>
-                            {
-                                user?.photoURL ?
-                                    <>
+    return (
+        <div className='row p-md-5'>
+            <div className='col-12 col-md-4'>
+                <Card className="text-center">
+                    <Card.Header>Author</Card.Header>
+                    <span className='pt-md-3'>
+                        {
+                            user?.photoURL ?
+                                <>
 
-                                        <img src={user?.photoURL} className="rounded-circle w-25" alt="Author-Img" />
-                                    </>
+                                    <img src={user?.photoURL} className="rounded-circle w-25" alt="Author-Img" />
+                                </>
 
-                                    :
-                                    <FaUserAlt />
-                            }
-                        </span>
-                        <Card.Body>
-                            <Card.Title>{user?.displayName}</Card.Title>
-                            <Card.Text>
-                                {user?.email}
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </div>
-                <div className='col-12 col-md-8'>
-                    {
-                        review.map(sreview => (
-                            <Reviews key={sreview._id}
-                                sreview={sreview}
-                                handleDelete={handleDelete}
-                                handleUpdate = {handleUpdate}
-                            ></Reviews>
-                        ))
-                    }
-                </div>
-                <ToastContainer />
+                                :
+                                <FaUserAlt />
+                        }
+                    </span>
+                    <Card.Body>
+                        <Card.Title>{user?.displayName}</Card.Title>
+                        <Card.Text>
+                            {user?.email}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
             </div>
+            {
+                review.length > 0 ?
+                    <div className='col-12 col-md-8'>
+                        {
+                            review.map(sreview => (
+                                <Reviews key={sreview._id}
+                                    sreview={sreview}
+                                    handleDelete={handleDelete}
+                                    handleUpdate={handleUpdate}
+                                ></Reviews>
+                            ))
+                        }
+                    </div>
+                    :
+                    <div className='col-12 col-md-8 text-center'>
+                        <p className='display-6 fw-bold'>No reviews were added</p>
+                    </div>
+            }
+            <ToastContainer />
+        </div>
 
-        );
-    };
+    );
+};
 
-    export default MyReviews;
+export default MyReviews;
