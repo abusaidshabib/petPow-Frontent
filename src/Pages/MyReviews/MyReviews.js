@@ -1,53 +1,48 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Container, Image } from 'react-bootstrap';
+import React, { useContext, useState } from 'react';
 import { FaUserAlt } from 'react-icons/fa';
 import { AuthContext } from '../../Context/UserContext/UserContext';
+import Card from 'react-bootstrap/Card';
+import { Button } from 'react-bootstrap';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
-    const [reviews, setReviews] = useState({});
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [user?.email])
-
-
     return (
-        <div className='py-lg-5 py-md-4'>
-            <Container>
-                <div className="row g-0 text-center">
-                    <div className="col-12 col-md-4 py-5">
+        <div className='row p-md-5'>
+            <div className='col-12 col-md-4'>
+                <Card className="text-center">
+                    <Card.Header>Author</Card.Header>
+                    <span className='pt-md-3'>
                         {
                             user?.photoURL ?
-                                <Image className='border border-5' roundedCircle src={user.photoURL}></Image>
+                                <>
+
+                                    <img src={user?.photoURL} className="rounded-circle w-25" alt="Author-Img" />
+                                </>
+
                                 :
-                                <FaUserAlt></FaUserAlt>
+                                <FaUserAlt />
                         }
-                        <br />
-                        <br />
-                        {
-                            user?.displayName ?
-                                <h3>{user.displayName}</h3>
-                                :
-                                <h3>No UserName here</h3>
-                        }
-                        {
-                            user?.email ?
-                                <h5>{user.email}</h5>
-                                :
-                                <h5>No email here</h5>
-                        }
+                    </span>
+                    <Card.Body>
+                        <Card.Title>{user?.displayName}</Card.Title>
+                        <Card.Text>
+                            {user?.email}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </div>
+            <div className='col-12 col-md-8'>
+                <div className='card text-center'>
+                    <div className="card-header">
+                        Review of = <b>This dynamic service</b>
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Special title treatment</h5>
+                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
                     </div>
-                    <div>
-                        {/* {
-                            reviews.map(review => <div key={review._id}>demo</div>)
-                        } */}
-                    </div>
                 </div>
-            </Container>
+            </div>
         </div>
     );
 };

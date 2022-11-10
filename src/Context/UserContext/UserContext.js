@@ -10,19 +10,20 @@ const UserContext = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    useEffect(()=>{
+    useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             setLoading(false);
         })
-    
+
         return () => unSubscribe();
-    },[])
+    }, [])
 
     const regUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
+
 
     const googlePopUp = (provider) => {
         setLoading(true);
@@ -39,7 +40,7 @@ const UserContext = ({ children }) => {
         return signOut(auth);
     }
 
-    const allInfo = { googlePopUp, loading, signInEmPass, user, logOut, regUser};
+    const allInfo = { googlePopUp, loading, signInEmPass, user, logOut, regUser };
 
     return (
         <div>
