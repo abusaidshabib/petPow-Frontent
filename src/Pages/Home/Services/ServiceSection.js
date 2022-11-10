@@ -24,7 +24,7 @@ const ServiceSection = ({ services }) => {
                                 <Card.Body>
                                     <Card.Title><h3>{service.title}</h3></Card.Title>
                                     <Card.Text>
-                                        {service.details.slice(0, 80)}...
+                                        {service.details.slice(0, 100)}...
                                         <span className='text-end'>
                                             <Link to={`/service/${service._id}`}>More Details</Link>
                                         </span>
