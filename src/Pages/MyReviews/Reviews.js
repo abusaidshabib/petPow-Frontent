@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 
-const Reviews = ({ sreview, handleDelete, handleUpdate }) => {
+const Reviews = ({ sreview, handleDelete }) => {
     const { title, review, _id } = sreview;
     return (
         <div>

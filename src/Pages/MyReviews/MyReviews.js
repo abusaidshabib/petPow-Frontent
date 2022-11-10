@@ -12,12 +12,14 @@ const MyReviews = () => {
     const { user } = useContext(AuthContext);
     const [review, setReview] = useState([]);
 
+    // load reviews from the servers using emails
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setReview(data))
     }, [user?.email])
 
+    // Delete data
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you wanna delete this review');
         if (proceed) {
@@ -36,15 +38,6 @@ const MyReviews = () => {
     }
 
 
-    const handleUpdate = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ status: 'Approved' }),
-        })
-    }
     return (
         <div className='row p-md-5'>
             <div className='col-12 col-md-4'>
@@ -78,7 +71,6 @@ const MyReviews = () => {
                                 <Reviews key={sreview._id}
                                     sreview={sreview}
                                     handleDelete={handleDelete}
-                                    handleUpdate={handleUpdate}
                                 ></Reviews>
                             ))
                         }

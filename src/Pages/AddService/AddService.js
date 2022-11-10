@@ -25,7 +25,7 @@ const AddService = () => {
         const price = form.price.value;
         const index = `${size + 1}`;
 
-
+        // data's for server
         const oneservice = {
             image: url,
             index,
@@ -34,6 +34,7 @@ const AddService = () => {
             price
         }
 
+        // send data to server
         fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {

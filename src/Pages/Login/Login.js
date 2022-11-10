@@ -8,10 +8,13 @@ import GooglePopup from '../Shared/GooglePopUP/GooglePopup';
 const Login = () => {
     useTitle('login')
     const { signInEmPass } = useContext(AuthContext);
+
+    // go the old location
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
 
+    // submit data's for login and reset
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;

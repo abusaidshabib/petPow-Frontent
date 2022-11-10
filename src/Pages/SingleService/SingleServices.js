@@ -15,6 +15,7 @@ const SingleServices = () => {
     const { title, details, image, index, _id, } = useLoaderData();
 
 
+    // load review from data
     useEffect(() => {
         fetch(`http://localhost:5000/reviews/${_id}`)
             .then(res => res.json())
