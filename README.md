@@ -80,7 +80,10 @@ viewDB: https://service-provider-server-seven.vercel.app
 back git: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-abusaidshabib.git
 
 features
-1. service about pets selling, buying and others
-2. delete option 
-3. Best backend
-4. 4 api calls
+1. Navbar, add banner, two meaningful section.
+2. List of services added and see all button going all service page after clicking
+3. 100 characters of details section with service title, img etc
+4. img full screen add
+5. review add, review viewed, delete
+6. log in register, google login button
+7. multiple api called dynamic data
