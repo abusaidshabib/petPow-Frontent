@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import './About.css';
 
 const About = () => {
     return (
@@ -8,7 +9,7 @@ const About = () => {
                 <div className="card mb-3 border-0" >
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src="https://images.unsplash.com/photo-1508948956644-0017e845d797?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=917&q=80" className="border border-5 border-warning rounded-1 img-fluid" alt="..." />
+                            <img src="https://images.unsplash.com/photo-1508948956644-0017e845d797?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=917&q=80" className="border border-5 border-warning rounded-1 img-fluid fixed_card" alt="..." />
                         </div>
                         <div className="col-md-8 cyanBg text-white">
                             <div className="card-body">
