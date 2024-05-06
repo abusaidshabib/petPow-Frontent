@@ -25,7 +25,11 @@ const Login = () => {
             .then(result => {
                 result = result.user;
                 form.reset();
+                if (result && result.email === "admin@gmail.com") {
+                    navigate("/addservice", { replace: true });
+                }else{
                 navigate(from, { replace: true });
+                }
             })
             .catch(error => {
                 console.error(error);
