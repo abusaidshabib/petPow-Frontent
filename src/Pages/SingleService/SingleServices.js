@@ -53,6 +53,18 @@ const SingleServices = () => {
 
     }
 
+    const handleSubmit = (e) => {        
+        e.preventDefault();
+        const form = e.target;
+        const number = form.number.value;
+        const date = form.date.value;
+        if(number == 98786548113561){
+            toast("Payment successfully done");
+        }else{
+            toast.error("Payment unsuccessful")
+        }
+    }
+
     return (
         <Container>
             <Card>
@@ -65,6 +77,21 @@ const SingleServices = () => {
                     </Card.Text>
                 </Card.Body>
             </Card>
+            <Form onSubmit={handleSubmit} className='py-5'>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>stripe Card Number</Form.Label>
+                        <Form.Control name='number' type="number" placeholder="Card Number" required />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Date</Form.Label>
+                        <Form.Control name='date' type="date" placeholder="Enter the last date" required />
+                    </Form.Group>
+
+                    <Button className='w-100' variant="primary" type="submit">
+                        Payment
+                    </Button>
+                </Form>
             {
                 review.length > 0 ?
                     <Carousel className='mb-5 bg-dark text-white'>
